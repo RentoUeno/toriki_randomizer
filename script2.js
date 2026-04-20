@@ -392,16 +392,22 @@ function goukai_change() {
   }
 }
 
-window.addEventListener("load", () => {
-  document.querySelectorAll("audio").forEach(audio => {
+window.addEventListener("load", async () => {
+  const audios = document.querySelectorAll("audio");
 
-    audio.addEventListener("canplaythrough", () => {
+  for (const audio of audios) {
+    try {
+      audio.load();
+
+      await new Promise((resolve, reject) => {
+        audio.oncanplaythrough = resolve;
+        audio.onerror = reject;
+      });
+
       console.log("OK:", audio.id, audio.getAttribute("src"));
-    });
 
-    audio.addEventListener("error", () => {
+    } catch (e) {
       console.log("NG:", audio.id, audio.getAttribute("src"));
-    });
-
-  });
+    }
+  }
 });
