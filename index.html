@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>鳥貴族ランダマイザー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="sound1" src="impactflush.mp3" preload="auto"></audio>
+    <audio id="sound2" src="pokyun.mp3" preload="auto"></audio>
+    <audio id="sound3" src="3000fever.mp3" preload="auto"></audio>
+    <audio id="sound4" src="pekari.mp3" preload="auto"></audio>
+    <audio id="sound5" src="shinhuogiacut.mp3" preload="auto"></audio>
+    <audio id="sound6" src="fog.mp3" preload="auto"></audio>
+    <audio id="sound7" src="unicorn.mp3" preload="auto"></audio>
+    <audio id="sound8" src="garou.mp3" preload="auto"></audio>
+    <audio id="sound9" src="pachinko.mp3" preload="auto"></audio>
+    <audio id="sound10" src="vhura.mp3" preload="auto"></audio>
+    <audio id="sound11" src="sansei.mp3" preload="auto"></audio>
+    <audio id="sound12" src="garou1.mp3" preload="auto"></audio>
+    <audio id="sound13" src="garou2.mp3" preload="auto"></audio>
+    <audio id="sound14" src="syoukaku.mp3" preload="auto"></audio>
+    <audio id="sound15" src="laughcat2.mp3" preload="auto"></audio>
+    <audio id="sound16" src="ikuzogandam.mp3" preload="auto"></audio>
+
+    <div class="parent">
+        <div class="child1"><img src="yellow.png"></div>
+        <p><h1>鳥貴族ランダマイザー</h1></p>
+        <div class="child2"><a href="index2.html"><img src="yellow.png"></a></div>
+    </div>
+
+    <label>
+    個数を入力
+    <input type="number" id="count" placeholder="個数を入力" value="5">
+    </label>
+    <br>
+    <label>
+    重複あり
+    <input type="checkbox" id="tyouhuku">
+    </label>
+    <br>
+    <label>
+    アルコールを選ぶ(食べ物は含まない)
+    <input type="checkbox" id="alcohol" onchange="goukai()">
+    </label>
+    <div id="extra"></div>
+    <br>
+    <br>
+    <button onclick="pickMenu()">
+    <img src="https://images.clubt.jp/thumbs/39291/168007/1.jpg?v=1603395537.707626" width="150">
+    <br>
+    抽選する
+    </button>
+    <br>
+    <br>
+    <label>
+    <span id="pushedtimes_display">0</span>回目の抽選</label>
+    <br>
+    <br>
+    ↓↓結果↓↓
+    <br>-----------------------------------------------------------------
+
+    <ul id="result"></ul>-----------------------------------------------------------------
+
+    <script src="script.js"></script>
+</body>
+</html>
