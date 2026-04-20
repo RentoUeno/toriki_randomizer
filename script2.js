@@ -391,3 +391,17 @@ function goukai_change() {
     document.getElementById("goukai_percent_input")?.remove();
   }
 }
+
+window.addEventListener("load", () => {
+  document.querySelectorAll("audio").forEach(audio => {
+
+    audio.addEventListener("canplaythrough", () => {
+      console.log("OK:", audio.id, audio.getAttribute("src"));
+    });
+
+    audio.addEventListener("error", () => {
+      console.log("NG:", audio.id, audio.getAttribute("src"));
+    });
+
+  });
+});
