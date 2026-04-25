@@ -132,7 +132,13 @@ const ALL_SOUNDS = [
   "sound13",
   "sound14",
   "sound15",
-  "sound16"
+  "sound16",
+  "sound17",
+  "sound18",
+  "sound19",
+  "sound20",
+  "sound21",
+  "sound22"
   // 増やしたい場合はここに追加
 ];
  

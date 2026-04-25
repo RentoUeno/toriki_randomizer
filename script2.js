@@ -131,7 +131,13 @@ const ALL_SOUNDS = [
   "sound13",
   "sound14",
   "sound15",
-  "sound16"
+  "sound16",
+  "sound17",
+  "sound18",
+  "sound19",
+  "sound20",
+  "sound21",
+  "sound22"
   // 増やしたい場合はここに追加
 ];
 
@@ -392,22 +398,16 @@ function goukai_change() {
   }
 }
 
-window.addEventListener("load", async () => {
-  const audios = document.querySelectorAll("audio");
+window.addEventListener("load", () => {
+  document.querySelectorAll("audio").forEach(audio => {
 
-  for (const audio of audios) {
-    try {
-      audio.load();
-
-      await new Promise((resolve, reject) => {
-        audio.oncanplaythrough = resolve;
-        audio.onerror = reject;
-      });
-
+    audio.addEventListener("canplaythrough", () => {
       console.log("OK:", audio.id, audio.getAttribute("src"));
+    });
 
-    } catch (e) {
+    audio.addEventListener("error", () => {
       console.log("NG:", audio.id, audio.getAttribute("src"));
-    }
-  }
+    });
+
+  });
 });
